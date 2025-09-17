@@ -1,7 +1,46 @@
-body{
-    background-color: brown;
-    color: cornsilk;
+body {
+    background-color: #fdfdfd;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+form#todo-form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    gap:1.5rem;
+
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    max-width: fit-content;
+    margin: auto;
+}
+
+#todo-form fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem
+}
+
+
+#todo-form label {
+    text-align: center;
+}
+
+#todo-form .btn-submit {
+    border:none;
+    background-color: red;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: fit-content;
 }
