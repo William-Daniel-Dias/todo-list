@@ -1,0 +1,165 @@
+/* Import a modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* --- General Styles --- */
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+h1 {
+    color: #00ffc0;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* --- Form Styles --- */
+form#todo-form {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#todo-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#todo-form label {
+    font-size: 1rem;
+    color: #b0b0b0;
+}
+
+#todo-form input#title {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#todo-form input#title:focus {
+    outline: none;
+    border-color: #00ffc0;
+}
+
+#todo-form .btn-submit {
+    background-color: #00e6a1;
+    color: #1a1a1a;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#todo-form .btn-submit:hover {
+    background-color: #00ffc0;
+    transform: translateY(-2px);
+}
+
+/* --- List Styles --- */
+ul#todo-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.todo-item {
+    background-color: #2a2a2a;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.todo-item.done {
+    background-color: #222;
+    opacity: 0.7;
+}
+
+.todo-item .toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+.todo-item .toggle:checked {
+    background-color: #00ffc0;
+    border-color: #00ffc0;
+}
+
+.todo-item .toggle:checked::after {
+    content: '✔';
+    color: #1a1a1a;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo-item .title {
+    flex-grow: 1;
+    font-size: 1rem;
+    color: #e0e0e0;
+}
+
+.todo-item.done .title {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.todo-item .remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-item .remove-btn:hover {
+    background-color: #ff1a1a;
+}
